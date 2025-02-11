@@ -41,16 +41,20 @@ class CadastroDeContados:
             for nome, info in self.contatos.items():
                 print(f"{nome}: Telefone - {info['Telefone']}, Email - {info['email']}")
 
+    def buscar_contato(self,nome):
+        if nome in self.contatos:
+            info = self.contatos[nome]
+            print(f'Contato encotrado: {nome}: -Telefone: {info['Telefone']}, Email: {info['email']}')
+        else:
+            print(f'Contato {nome} não encontrado')
+        
 
-    
-    
-    
-    
-        
-        
-        
-       
         
 contatoComando = CadastroDeContados()
 contatoComando.adicionar_contatos('jorge', '1991432033', 'Jorge.carvalor0309@hotmail.com')
 contatoComando. exibir_contatos()
+contatoComando.buscar_contato('jorge')
+contatoComando.adicionar_contatos('Tais','972398423', 'Taismmsj@hotmail.com')
+contatoComando.adicionar_contatos('Lais', '0832-39842','laai.curvello@hotmail.com')
+contatoComando.exibir_contatos()
+contatoComando.buscar_contato('Lais')
